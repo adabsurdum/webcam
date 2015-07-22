@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- EditTextPreference
+        android:key="pref_remote_host"
+        android:title="@string/pref_remote_host"
+        android:summary="@string/pref_remote_host_summary"
+        android:defaultValue="184.78.136.196" />
+    <EditTextPreference
+        android:key="pref_local_host"
+        android:title="@string/pref_local_host"
+        android:summary="@string/pref_local_host_summary"
+        android:defaultValue="192.168.1.4" / -->
+    <ListPreference
+        android:key="SERVER"
+        android:title="Which server"
+        android:summary="Choose a server"
+        android:entries="@array/listentries"
+        android:entryValues="@array/listvalues"/>
+    <!-- CheckBoxPreference
+        android:key="pref_use_local_host"
+        android:title="@string/pref_use_local_host"
+        android:summary="@string/pref_use_local_host_summary"
+        android:defaultValue="true" / -->
+</PreferenceScreen>

@@ -1,0 +1,82 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.lotech.Succ" >
+
+    <!-- android:background="#0099cc" -->
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <!-- EditText
+            android:id="@+id/editTextIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:ems="12"
+            android:hint="Server IP" >
+            <requestFocus />
+        </EditText -->
+    <!-- ToggleButton
+        android:id="@+id/armingSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/XXX"
+        android:onClick="onToggleArmed"
+        android:textOff="@string/XXX"
+        android:textOn="@string/XXX" / -->
+
+    <!-- Button
+        android:id="@+id/alarmTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/armingSwitch"
+        android:layout_centerHorizontal="true"
+        android:text="@string/XXX"
+        android:onClick="onTestAlarm" / -->
+
+    <ImageView
+        android:id="@+id/cameraDisplay"
+        android:layout_width="320dp"
+        android:layout_height="240dp"
+        android:layout_below="@+id/editTextIP"
+        android:layout_centerInParent="true"
+        android:accessibilityLiveRegion="none"
+        android:contentDescription="@string/dummy_content"
+        android:minHeight="240dp"
+        android:minWidth="320dp"
+        android:onClick="onImageTap"
+        android:src="@drawable/ic_action_camera" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_alignParentRight="true"
+        	android:layout_below="@+id/cameraDisplay"
+            android:layout_marginBottom="10dp"
+			android:progress="1"
+			android:max="100"
+            android:visibility="visible" 
+			/>
+
+</RelativeLayout>
+</FrameLayout>
+

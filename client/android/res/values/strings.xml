@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="pref_remote_host">Remote Server</string>
+	<string name="pref_remote_host_summary">IPv4 address or DNS name of remote server</string>
+	<string name="pref_local_host">Local Server</string>
+	<string name="pref_local_host_summary">IPv4 address or DNS name of local server</string>
+	<string name="pref_use_local_host">Use local host</string>
+	<string name="pref_use_local_host_summary">Use local host</string>
+	<string name="pref_port">Port</string>
+	<string name="pref_port_summary">Server port</string>
+    <string name="app_name">Simple UDP Camera Client</string>
+    <string name="dummy_content">Camera View</string>
+    <string name="action_settings">Settings</string>
+</resources>
+
