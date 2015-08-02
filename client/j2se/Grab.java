@@ -19,6 +19,7 @@ import java.net.InetAddress;
 import java.net.DatagramSocket;
 import java.net.DatagramPacket;
 import java.net.SocketException;
+import java.net.SocketAddress;
 import java.net.UnknownHostException;
 import java.net.SocketTimeoutException;
 
@@ -120,6 +121,7 @@ class Grab {
 	  */
 	private InetAddress server;
 	private short port;
+	private SocketAddress reqSock;
 	private DatagramSocket socket;
 
 	/**
@@ -235,7 +237,7 @@ class Grab {
 				dos.writeShort( Integer.valueOf( CRC16.calc( ostream.toByteArray() ) ).shortValue() );
 
 				//socket.setSoTimeout( 3000 );
-				socket.send( new DatagramPacket( ostream.toByteArray(), ostream.size(), server, port ) );
+				socket.send( new DatagramPacket( ostream.toByteArray(), ostream.size(), reqSock ) );
 			}
 
 		} catch( IOException e ) {
@@ -256,7 +258,7 @@ class Grab {
 			dos.writeShort( Integer.valueOf( CRC16.calc( ostream.toByteArray() ) ).shortValue() );
 
 			//socket.setSoTimeout( 3000 );
-			socket.send( new DatagramPacket( ostream.toByteArray(), ostream.size(), server, port ) );
+			socket.send( new DatagramPacket( ostream.toByteArray(), ostream.size(), reqSock ) );
 
 		} catch( IOException e ) {
 			System.err.println( e.toString() );
@@ -322,6 +324,7 @@ class Grab {
 				socket.setSoTimeout( 3000 );
 				socket.receive( incomingPacket );
 				n = incomingPacket.getLength();
+				reqSock = incomingPacket.getSocketAddress();
 
 			} catch( SocketTimeoutException e ) {
 				System.out.printf(
